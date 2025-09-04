@@ -1,0 +1,757 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 2: C programming</title>
+    <link rel="stylesheet" href="mystyle.css">
+    <style>
+        .question-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.2);
+            transition: 0.3s;
+        }
+
+        .question-box:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .question-box h3 {
+            color: #ffd700;
+        }
+        table, td, th {
+            border: 2px solid orange;
+            border-collapse: collapse;
+            padding: 7px;
+
+
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Computer - Grade XII</h1>
+        <p>All about the syllabus of class 12 Computer Science</p>
+    </header>
+
+    <nav>
+
+        <a href="index.html">Home</a>
+        <a href="chapter 1.html">Chapter 1</a>
+        <a href="chapter 2.html">Chapter 2</a>
+        <a href="chapter 3.html">Chapter 3</a>
+        <a href="chapter 4.html">Chapter 4</a>
+        <a href="chapter 5.html">Chapter 5</a>
+        <a href="chapter 6.html">Chapter 6</a>
+        <a href="chapter 7.html">Chapter 7</a>
+        <a href="chapter 8.html">Chapter 8</a>
+
+    </nav>
+    <div class="container">
+        <section class="content-box">
+            <h2>Chapter 4: C programming</h2>
+            <p>The "C programming" chapter in Grade 12 NEB introduces students to the basics of C programming. It provides us necessary information to solve different types of problems related to C 
+                </p>
+
+            <p>Students also learn to use C programming efficiently which serves as a base for learning other languages in the future.</p>
+
+            <section class="content-box">
+            <h2>Contents</h2>
+
+            <div class="question-box">
+                <h3>Functions in C</h3>
+                <h4>Introduction and Syntax</h4>
+                <p>A function in C is a block of code that performs a specific task. It is designed to perform a particular job and can be called multiple times in a program, reducing repetition. A basic function in C includes a return type, function name, parameters (optional), and a body.</p>
+
+<p>Syntax:</p>
+<pre> 
+return_type function_name(parameters) {
+    // body of the function
+ }</pre>
+
+
+<h4>Purpose and Advantages</h4>
+<p>
+Functions promote modularity, code reuse, and easier debugging. They make large programs more manageable by breaking them into smaller, logical units. The use of functions improves readability, saves time, and reduces errors.</p>
+
+<h4>Components of a Function</h4>
+<ol>
+    <li>Function Prototype: Declares the function before its use.</li>
+    <li>Function Definition: Contains the actual code to execute.</li>
+    <li>Function Call: Invokes the function to perform its task.
+</li>
+    <li>Return Statement: Sends a result back to the calling function.</li>
+</ol>
+<h4>1.  Function Prototype</h4>
+<p>Declares the function before it is used.
+    For example:
+<pre>
+    return_type 
+    function_name(parameter_list);</pre>
+</p>
+
+<h4>
+  2.   Function Definition
+</h4>
+<p>
+    Contains actual code of the function.
+    For example:
+<pre>
+    int sum(int a, int b)
+    {
+    return a + b;
+    }
+</pre>
+</p>
+
+<h4>
+    3. Function Call
+</h4>
+<p>
+    Executes the function.
+    For Example:
+<pre>
+   int result = sum(5, 10); 
+</pre>
+
+</p>
+
+<h4>
+    4. Return Statement
+</h4>
+<p>
+    Sends value from function to the caller.
+    For Example:
+<pre>
+   return expression; 
+</pre>
+
+</p>
+
+<h4>
+    Types of Functions:
+
+</h4>
+
+<p>
+    1. Library Functions: They are predefined functions in the library. They perform common and frequently required tasks.
+</p>
+<p>2. User- defined functions: They are the functions that are created by the users to perform specific tasks. They allow modular programming and reusability.</p>
+
+</div>
+
+<div class="question-box">
+ <h3>Passing Arguments</h3>
+ <p>Arguments are the values passed to a function when it is called. C supports two types of argument passing: call by value and call by reference.</p>
+
+ <h4>1. Call by Value</h4>
+ <p>In call by value, a copy of the actual argument is passed to the function. Any modifications inside the function affect only the local copy, leaving the original variable unchanged.</p>
+ <h5>Advantages</h5>
+ <ul>
+    <li>The original data remains safe.</li>
+    <li>Simple and widely used for small variables.</li>
+ </ul>
+ <h5>Disadvantages</h5>
+    <ul>
+        <li>Inefficient for large data structures, as it requires copying the entire data.</li>
+        <li>Cannot be used to modify the original variable inside the function.</li>
+    </ul>
+    <p>For example:
+        <pre>
+    void change(int x) {
+    x = 10;   // Changes only local copy
+    }
+
+    int main() {
+    int a = 5;
+    change(a);
+    printf("%d", a); // Output: 5 (unchanged)
+    }
+</pre>
+    </p>
+
+<h4>2. Call by reference</h4>
+<p>In call by reference, the address of the variable is passed to the function, so the function can modify the original variable.</p>
+<h5>Advantages</h5>
+<ul>
+    <li>Efficient for large data structures since no copying occurs.
+    </li>
+    <li>Allows functions to modify multiple variables directly.</li>
+</ul>
+
+<h5>Disadvantages</h5>
+<ul>
+    <li>Original data can be unintentionally modified.
+    </li>
+    <li>Slightly more complex syntax due to pointer usage.</li>
+</ul>
+
+<p>For Example:
+    <pre>
+    void change(int *x) {
+    *x = 10;   // Modifies the original variable
+    }
+
+    int main() {
+    int a = 5;
+    change(&a);
+    printf("%d", a); // Output: 10
+    }
+    </pre>
+</p>
+
+</div>
+
+<div class="question-box">
+    <h3>Variable and its Scopes</h3>
+    <p>Scope defines where a variable can be accessed in the program.</p>
+    <ol>
+        <li><b>Local Variable:</b> Declared inside a function and accessible only within it. Memory is allocated when the function is called and deallocated when it ends.</li>
+        <li> <b>Global Variable:</b> Declared outside all functions, accessible by any function in the program.</li>
+    </ol>
+</div>
+<div class="question-box">
+    <h3>Storage classes</h3>
+    <ol>
+        <li><b>Automatic (auto): </b> Default for local variables.</li>
+        <li><b>External (extern):</b> Used for global variables across files.</li>
+        <li><b>Static (static):</b> Retains value between function calls.</li>
+        <li><b>Register (register): </b>Stored in CPU register for faster access.</li>
+    </ol>
+    <h3>Example of function with array</h3>
+    <p>
+        <pre>
+    void display(int arr[], int n) {
+    for(int i=0; i < n; i++)
+    printf("%d ", arr[i]);
+    }
+  
+        </pre>
+    </p>
+</div>
+
+<div class="question-box">
+    <h3>Recursive Function</h3>
+    <p>A function that calls itself to solve similar kind of problems.</p>
+    <p>Syntax:
+        <pre>
+    return_type function_name(parameters) {
+    if(condition)
+        function_name(arguments);
+    else
+        return value;
+    }
+        </pre>
+    </p>
+    <h4>Advantages:</h4>
+    <ul>
+        <li>Simplifies complex problems.</li>
+        <li>Reduces code length.</li>
+    </ul>
+    <h4>Disadvantages:</h4>
+    <ul>
+        <li>Can consume more memory (stack space).</li>
+        <li>Risk of infinite recursion.</li>
+    </ul>
+    <p>Example:
+        <pre>
+    int factorial(int n) {
+    if(n == 0)
+        return 1;
+    else
+        return n * factorial(n-1);
+    }
+        </pre>
+    </p>
+
+</div>
+
+<div class="question-box">
+    <h3> Structure</h3>
+    <p>A structure in C is a user-defined data type that groups variables of different types under one name. It is useful to represent a record.</p>
+    <p>Syntax:</p>
+    <pre>
+    struct structure_name {
+    data_type member1;
+    data_type member2;
+    ...
+    };
+    </pre>
+    <h4>Structure Size</h4>
+    <p>The size of a structure is equal to the sum of sizes of its members plus any padding bytes inserted by the compiler for alignment.</p>
+    <pre>
+    struct Example {
+    int a;    // 4 bytes
+    char b;   // 1 byte (+ 3 bytes padding)
+    float c;  // 4 bytes
+    };
+    </pre>
+    <h4>Accessing Members of a Structure</h4>
+<p>Structure variables are accessed using the dot (.) operator.</p>
+<pre>
+#include <stdio.h>
+struct Student {
+    int roll;
+    char name[20];
+    float marks;
+};
+
+int main() {
+    struct Student s1;
+    s1.roll = 1;
+    s1.marks = 92.5;
+    strcpy(s1.name, "Prabhas");
+
+    printf("Roll: %d\nName: %s\nMarks: %.2f", s1.roll, s1.name, s1.marks);
+    return 0;
+}
+</pre>
+
+<h4>Nested Structure</h4>
+<p>A nested structure is a structure inside another structure.</p>
+<pre>
+#include <stdio.h>
+struct Date {
+    int day, month, year;
+};
+
+struct Student {
+    int roll;
+    char name[20];
+    struct Date dob;   // nested structure
+};
+
+int main() {
+    struct Student s1 = {1, "Messi", {15, 8, 2006}};
+    printf("Roll: %d\nName: %s\nDOB: %d/%d/%d", 
+           s1.roll, s1.name, s1.dob.day, s1.dob.month, s1.dob.year);
+    return 0;
+}
+</pre>
+<h4>Array of Structures</h4>
+<p>We can declare an array of structures to store multiple records of the same type.</p>
+<pre>
+#include <stdio.h>
+struct Student {
+    int roll;
+    char name[20];
+    float marks;
+};
+
+int main() {
+    struct Student s[3] = {
+        {1, "Messi", 90.5},
+        {2, "Ronaldo", 88.0},
+        {3, "Prabhas", 92.0}
+    };
+
+    for(int i = 0; i < 3; i++) {
+        printf("Roll: %d, Name: %s, Marks: %.2f\n", 
+               s[i].roll, s[i].name, s[i].marks);
+    }
+    return 0;
+}
+</pre>
+
+<h4>Passing Structure to Function</h4>
+<p>Structures can be passed by value (copy) or by reference (using pointers).</p>
+<p>Example: By value</p>
+<pre>
+// by value
+#include <stdio.h>
+struct Student {
+    int roll;
+    char name[20];
+    float marks;
+};
+
+void display(struct Student s) {
+    printf("Roll: %d, Name: %s, Marks: %.2f\n", s.roll, s.name, s.marks);
+}
+
+int main() {
+    struct Student s1 = {1, "Messi", 91.5};
+    display(s1);  // pass by value
+    return 0;
+}
+</pre>
+<p>Example: By reference</p>
+<pre>
+// by reference
+void display(struct Student *s) {
+printf("Roll: %d, Name: %s, Marks: %.2f\n", s->roll, s->name, s->marks);
+}
+</pre>
+
+</div>
+
+<div class="question-box">
+    <h3>Union</h3>
+    <p>A union in C is a user-defined data type similar to a structure, but with a key difference: all members of a union share the same memory location. This means that at any given time, only one member can store a value, and the memory occupied is equal to the size of its largest member.</p>
+    <p>Syntax:</p>
+    <pre>
+    union UnionName {
+    data_type1 member1;
+    data_type2 member2;
+    ...
+    }; 
+    </pre>
+
+    <h4> Comparison between Structure and Pointer:</h4>
+    <table style="width: 100%;">
+     <tr>
+        <th>Feature</th>
+        <th>Structure</th>
+        <th>Union</th>
+     </tr>
+     <tr>
+        <td>Memory</td>
+        <td>Allocates memory separately for each member</td>
+        <td>Allocates memory equal to the largest member only</td>
+
+     </tr>
+     <tr>
+        <td>Value Storage</td>
+        <td>Can store values for all members simultaneously. </td>
+        <td>Can store only one value at a time.</td>
+     </tr>
+     <tr>
+        <td>Usage</td>
+        <td>When all the data need to be used.</td>
+        <td>When only one data need to be used to save storage.</td>
+     </tr>
+     <tr>
+        <td>Size</td>
+        <td>Sum of sizes of all members + padding</td>
+        <td> Size of the largest member</td>
+     </tr>
+    </table>
+
+</div>
+<div class="question-box">
+    <h3>Pointers</h3>
+    <p>A pointer is a variable that stores the address of another variable instead of the actual value. Pointers are essential in C for dynamic memory allocation, array manipulation, and passing data efficiently to functions.</p>
+
+    <p>Syntax:</p>
+    <pre>
+    data_type *pointer_name;
+    </pre>
+
+    <h4> Usage and Working</h4>
+    <p>Pointers allow:</p>
+    <ul>
+        <li>Direct access and modification of variables stored in memory.
+        <li>Efficient handling of arrays and strings.</li>
+        <li>Passing variables to functions by reference.</li>
+        <li>Dynamic memory allocation during runtime.</li>
+        </li>
+    </ul>
+    <h4>Concept of Value and Address</h4>
+    <ul>
+        <li><b>Value:</b> The actual data stored in the variable (e.g., a = 10).</li>
+        <li><b>Address:</b> The location in memory where the variable is stored (accessed using &)</li>
+        <li><b>Pointer:</b> Stores the address of the variable. Dereferencing a pointer (*ptr) accesses the value stored at the address.</li>
+     
+    </ul>
+    <h4>Declaration and Initialization</h4>
+    <ul>
+        <li>Declare a pointer by specifying the type of variable it points to.</li>
+        <li>Initialize it with the address of a variable using the & operator.
+        </li>
+        <p>Example</p>
+        <pre>
+    int a = 5;
+    int *p; // declaration
+    p = &a; // initialization
+        </pre>
+    </ul>
+    <h4> Advantages of Pointer:</h4>
+    <ul>
+        <li>Efficient memory usage (pass by reference).
+        </li>
+        <li>Enables dynamic memory allocation.
+        </li>
+        <li>Useful for data structures like linked lists, trees, etc.
+        </li>
+        <li>Can access and manipulate arrays and strings efficiently.</li>
+    </ul>
+    <h4>Disadvantages of Pointer</h4>
+    <li>Complex syntax for beginners.</li>
+    <li>Risk of memory leaks or corruption if misused.</li>
+    <li>Dereferencing null or uninitialized pointers can crash programs.</li>
+
+</div>
+
+<div class="question-box">
+<h3>File Handling in C</h3>
+<h4>Concept of data file</h4>
+<p>A data file is a collection of related information stored permanently on secondary storage devices like a hard disk. Unlike variables in memory, data in files persists even after the program terminates.</p>
+
+<h4>Need for File Handling</h4>
+<ul>
+    <li>To store data permanently.</li>
+    <li>To access and manipulate large amounts of data efficiently.</li>
+    <li>To share data between programs.</li>
+    <li>To perform sequential or random access to data.</li>
+</ul>
+<h4>Types of Files in C</h4>
+<ol>
+    <li>Sequential Files: Data is accessed in a sequential order, one record after another.</li>
+    <li>Random (Direct) Files: Data can be accessed at any location directly using its position.</li>
+</ol>
+<h4>File handling functions in C</h4>
+<table>
+        <tr>
+            <th>Function</th>
+            <th>Purpose</th>
+            <th>Syntax</th>
+        </tr>
+        <tr>
+            <td>fopen()</td>
+            <td>Opens a file and returns a pointer to it.</td>
+            <td>FILE *fp = fopen("filename", "mode");</td>
+        </tr>
+        <tr>
+            <td>fclose()</td>
+            <td>Closes an opened file.</td>
+            <td>fclose(fp);</td>
+        </tr>
+        <tr>
+            <td>getc()</td>
+            <td>Reads a single character from a file.</td>
+            <td>ch = getc(fp);</td>
+        </tr>
+        <tr>
+            <td>putc()</td>
+            <td>Writes a single character to a file.</td>
+            <td>putc(ch, fp);</td>
+        </tr>
+        <tr>
+            <td>fprintf()</td>
+            <td>Writes formatted data to a file.</td>
+            <td>fprintf(fp, "format", variables);</td>
+        </tr>
+        <tr>
+            <td>fscanf()</td>
+            <td>Reads formatted data from a file.</td>
+            <td>fscanf(fp, "format", &variables);</td>
+        </tr>
+        <tr>
+            <td>getw()</td>
+            <td>Reads an integer from a file.</td>
+            <td>int x = getw(fp);</td>
+        </tr>
+        <tr>
+            <td>putw()</td>
+            <td>Writes an integer to a file.</td>
+            <td>putw(x, fp);</td>
+        </tr>
+        <tr>
+            <td>fgets()</td>
+            <td>Reads a string (line) from a file.</td>
+            <td>fgets(str, size, fp);</td>
+        </tr>
+        <tr>
+            <td>fputs()</td>
+            <td>Writes a string to a file.</td>
+            <td>fputs(str, fp);</td>
+        </tr>
+        <tr>
+            <td>fread()</td>
+            <td>Reads binary data from a file.</td>
+            <td>fread(ptr, size, count, fp);</td>
+        </tr>
+        <tr>
+            <td>fwrite()</td>
+            <td>Writes binary data to a file.</td>
+            <td>fwrite(ptr, size, count, fp);</td>
+        </tr>
+        <tr>
+            <td>remove()</td>
+            <td>Deletes a file.</td>
+            <td>remove("filename");</td>
+        </tr>
+        <tr>
+            <td>rename()</td>
+            <td>Renames a file.</td>
+            <td>rename("oldname", "newname");</td>
+        </tr>
+</table>
+
+<h4>Random access functions</h4>
+<table>
+        <tr>
+            <th>Function</th>
+            <th>Purpose</th>
+            <th>Syntax</th>
+        </tr>
+        <tr>
+            <td>fseek()</td>
+            <td>Moves the file pointer to a specific location.</td>
+            <td>fseek(fp, offset, origin);</td>
+        </tr>
+        <tr>
+            <td>rewind()</td>
+            <td>Moves the file pointer to the beginning of the file.</td>
+            <td>rewind(fp);</td>
+        </tr>
+        <tr>
+            <td>ftell()</td>
+            <td>Returns the current position of the file pointer.</td>
+            <td>long pos = ftell(fp);</td>
+        </tr>
+</table>
+
+
+
+</div>
+
+<div class="question-box">
+    <h3>File Opening modes</h3>
+    <p>In C, files can be opened in different modes depending on the type of operation (read, write, or append) you want to perform.</p>
+
+    <ol>
+        <li>Read Mode (r, r+)
+            <ul>
+                <li>r → Opens the file for reading only. The file must exist, otherwise an error occurs.</li>
+                <li>r+ → Opens the file for both reading and writing. The file must already exist.</li>
+            </ul>
+        </li>
+        <li>Write Mode (w, w+)
+            <ul>
+                <li>w → Opens the file for writing only. If the file already exists, its content is erased. If it doesn’t exist, a new file is created.</li>
+                <li>w+ → Opens the file for both reading and writing. If the file exists, it is cleared before writing.</li>
+            </ul>
+
+        </li>
+        <li>Append Mode (a, a+)
+            <ul>
+                <li>a → Opens the file for writing only. Data is added at the end of the file (previous data is not deleted). Creates the file if it doesn’t exist.</li>
+                <li>a+ → Opens the file for both reading and writing. Writing always happens at the end of the file.</li>
+            </ul>
+
+        </li>
+    </ol>
+</div>
+
+<div class="question-box">
+    <h3>Steps to work with file in C</h3>
+
+    <ol>
+        <li>Define File Pointer
+            <ul>
+                <li>A file pointer is declared using FILE *.</li>
+                <li>Example: FILE *fp;</li>
+            </ul>
+        </li>
+
+        <li>
+            Open File with Required Mode
+            <ul>
+                <li>Use the fopen() function to open the file with a specific mode (r, w,a, etc.).</li>
+                <li>Example: fp = fopen("data.txt", "r");</li>
+            </ul>
+        </li>
+
+        <li>Read, Write, Append Operations
+            <ul>
+                <li>Reading: fscanf(), fgets(), fgetc()</li>
+                <li>Writing: fprintf(), fputs(), fputc()</li>
+            </ul>
+        </li>
+
+        <li>Appending: Similar functions but opened in append mode.
+            <ul>
+                <li>Close the File</li>
+                <li>Always close a file after operations using fclose(fp);</li>
+                <li>
+                    This ensures data is saved properly and resources are released</li>
+            </ul>
+        </li>
+
+            <li>Reading Data from Files
+                <ul>
+                    <li>Functions:
+                        <ul>
+                            <li>fscanf(fp, "%s", str);</li>
+                            <li>fgets(str, size, fp);</li>
+                            <li>fgetc(fp);</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+
+        <li>Writing Data on Files
+            <ul>
+                <li>Functions:
+                    <ul>
+                        <li>fprintf(fp, "Hello");</li>
+                        <li>fputs("Text", fp);</li>
+                        <li>fputc('A', fp);</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+
+        <li>Appending Data to Files
+            <ul>
+                <li>Open the file in append mode (a or a+) and use the same writing functions. Data is added at the end without removing old content.</li>
+            </ul>
+        </li>
+
+        <li>End of File (EOF)
+            <ul>
+                <li>EOF is a special condition that indicates no more data can be read from a file.</li>
+                <li>Functions like fgetc() return EOF when the end is reached.</li>
+                <li>Example:
+        <pre>
+        while((ch = fgetc(fp)) != EOF) {
+        putchar(ch);}
+                    
+                    </pre>
+                </li>
+            </ul>
+
+
+        </li>
+    </ol>
+</div>
+
+<div class="question-box">
+    <h3>Typedef in C</h3>
+    <ul>
+        <li>typedef is a keyword used to create new names (aliases) for existing data types.</li>
+        <li>Makes code more readable and portable.</li>
+        <li>Example:
+            <pre>
+        typedef unsigned int uint;
+        uint age = 20;   // same as unsigned int age = 20;
+            </pre>
+
+        </li>
+    </ul>
+</div>
+
+<div class="question-box">
+    <h3>Keyword in C</h3>
+    <ul>
+        <li>A keyword is a reserved word that has a special meaning in C and cannot be used as an identifier (variable, function name, etc.).</li>
+        <li>Examples: int, float, if, else, while, return, typedef, etc.</li>
+        <li>Total: 32 keywords in C.</li>
+    </ul>
+
+
+
+</div>
+
+            </section>
+        </section>
+
+    
+</body>
+</html>

@@ -1,0 +1,618 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 1: Database Management</title>
+    <link rel="stylesheet" href="mystyle.css">
+    <style>
+        .question-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.2);
+            transition: 0.3s;
+        }
+
+        .question-box:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .question-box h3 {
+            color: #ffd700;
+        }
+        table, td, th {
+            border: 2px solid orange;
+            border-collapse: collapse;
+            padding: 7px;
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Computer - Grade XII</h1>
+        <p>All about the syllabus of class 12 Computer Science</p>
+    </header>
+
+    <nav>
+
+        <a href="index.html">Home</a>
+        <a href="chapter 1.html">Chapter 1</a>
+        <a href="chapter 2.html">Chapter 2</a>
+        <a href="chapter 3.html">Chapter 3</a>
+        <a href="chapter 4.html">Chapter 4</a>
+        <a href="chapter 5.html">Chapter 5</a>
+        <a href="chapter 6.html">Chapter 6</a>
+        <a href="chapter 7.html">Chapter 7</a>
+        <a href="chapter 8.html">Chapter 8</a>
+
+    </nav>
+    <div class="container">
+        <section class="content-box">
+            <h2>Chapter 1: Database management system</h2>
+            <p>The "Database Management" chapter in Grade 12 NEB introduces students to the basics of data handling and
+                organization. It explains the role of a Database Management System (DBMS) in storing, managing, and
+                retrieving data efficiently, and highlights the difference between data and information.</p>
+
+            <p>Students also learn about relational databases, tables, and the use of SQL for managing data. The chapter
+                covers essential commands like SELECT and INSERT, and introduces the concept of normalization to reduce
+                data redundancy and improve consistency.</p>
+        </section>
+
+        <section class="content-box">
+            <h2>Contents</h2>
+            <div class="question-box">
+                <h3>Data and Information</h3>
+                <p>Data refers to raw facts and figures that have no meaning on their own. It can be in the form of
+                    numbers, text, images, audio, or video. For example, a list of student names and their marks is
+                    data.
+
+                    There are different types of data such as numeric data, text data, date/time data, and boolean data.
+                    Data is collected from various sources like forms, sensors, or online systems and is later processed
+                    to generate useful information.
+
+                    Good data should be accurate, relevant, complete, and timely. Only when data is processed and
+                    analyzed does it become meaningful and help in decision-making. Thus, data plays a key role in
+                    modern computer systems and database management.
+                </p>
+                <p>Information is processed or organized data that has meaning and is useful for decision-making. When
+                    raw data is analyzed and presented in a structured way, it becomes information. For example, the
+                    average marks of a student calculated from individual scores is information.
+
+                    Information helps users understand patterns, solve problems, and make decisions. It adds context to
+                    data and turns it into something meaningful. In a database system, data is stored so it can be
+                    processed to produce useful information when needed.
+
+                    Good information should be accurate, timely, complete, and relevant. Without information, raw data
+                    has little value, which is why information is considered a valuable resource in both daily life and
+                    business.
+
+
+
+
+                </p>
+            </div>
+
+
+
+            <div class="question-box">
+                <h3>Features of Information</h3>
+                <p>Information has several important features that make it valuable and useful. First, it should be
+                    accurate, meaning it must be free from errors and reliable. Without accuracy, decisions made using
+                    the information can be wrong.
+                </p>
+                <p>Information should also be timely, available when needed to support quick and effective
+                    decision-making. Completeness is another key feature — all necessary details must be included to
+                    avoid misunderstandings. Additionally, information must be relevant, meaning it should be related
+                    and useful to the specific purpose or problem.</p>
+                <p>
+                    Lastly, information should be understandable and consistent so that users can easily interpret it
+                    without confusion. These features ensure that information helps individuals and organizations make
+                    informed decisions.
+                </p>
+            </div>
+
+
+            <div class="question-box">
+                <h3>Database and Its Purpose</h3>
+                <p>A database is an organized collection of related data that is stored electronically for easy access
+                    and management. It helps store large amounts of information systematically so that users can
+                    retrieve and update data efficiently.</p>
+
+                <p>
+                    The main purpose of a database is to provide a way to store data securely and reduce redundancy,
+                    ensuring data accuracy and consistency. Databases support multiple users and applications, making it
+                    easier to manage data in businesses, schools, banks, and many other organizations. Overall, a
+                    database helps in organizing data so it can be turned into useful information quickly.
+                </p>
+            </div>
+
+
+            <div class="question-box">
+                <h3>Terminologies in Database:</h3>
+                <h4>Table:</h4>
+                <p>A table in a database is a collection of related data organized in rows and columns. Each table
+                    represents a specific type of information, such as students or products. The columns in a table are
+                    called fields, which define the different categories of data, like name, age, or price.</p>
+                <h4>Field</h4>
+                <p>A field is a single piece of data or a column in a database table. It represents one category or
+                    attribute of the data, such as a person’s name, age, or phone number. Each field has a specific data
+                    type and holds values for that attribute in every record of the table. Fields help organize data
+                    clearly, making it easier to search and manage information within a database.</p>
+                <h4>Record</h4>
+                <p>A record is a complete set of fields that represent one item or entity in the table, such as all the
+                    details of one student. In some database systems, a record is also called a tuple, which means a
+                    single row of data containing values for each field.</p>
+                <h4>Tuple</h4>
+                <p>A tuple is another name for a single row or record in a database table. It represents one complete
+                    set of related data values for all the fields in that table. For example, in a student table, one
+                    tuple would contain all the information about one student, such as their ID, name, and marks. Tuples
+                    help organize data into meaningful units within the database.
+
+
+                </p>
+                <h4>Object</h4>
+                <p>An object is a concept from object-oriented databases, where data is stored as objects similar to
+                    real-world entities. Objects combine both data and actions (methods) that can be performed on the
+                    data.</p>
+
+                <h4>Keys</h4>
+                <p>Keys are special fields used to uniquely identify records in a table. A primary key ensures that each
+                    record is unique, while a foreign key links one table to another, helping maintain relationships
+                    between data in different tables.</p>
+
+                <h4>Data Dictionary</h4>
+                <p>A data dictionary is a collection of information about the data in a database, often called metadata.
+                    It includes details such as the names, types, sizes, and relationships of data elements. It helps in
+                    organizing, managing, and understanding the structure of the database, making it easier for users
+                    and administrators to maintain consistency and avoid redundancy.
+
+                </p>
+            </div>
+
+
+            <div class="question-box">
+                <h3>Database Management System</h3>
+                <h4>Introduction</h4>
+                <p>A Data Management System (DMS) is a software system that helps in storing, organizing, and managing
+                    large amounts of data efficiently. It allows users to easily create, retrieve, update, and delete
+                    data while ensuring data security, consistency, and integrity. DMS plays a vital role in handling
+                    data systematically in various fields like business, education, and healthcare.
+
+                </p>
+                <h4>Objectives</h4>
+                <p>The main objective of a Data Management System is to store, manage, and retrieve data efficiently and securely. It aims to reduce data redundancy, ensure consistency, and provide controlled access to data for multiple users.
+
+</p>
+<h4>Advantages</h4>
+<p>A Data Management System improves data sharing and accessibility, enhances security, reduces duplication, and ensures data integrity. It also supports backup and recovery, making data management more reliable and efficient.
+
+</p>
+
+<h4>Disadvantages</h4>
+<p>A Data Management System improves data sharing and accessibility, enhances security, reduces duplication, and ensures data integrity. It also supports backup and recovery, making data management more reliable and efficient.
+
+</p>
+
+            </div>
+
+
+            <div class="question-box">
+                <h3>Types of Database Model</h3>
+                <p>There are four types of datatypes models:</p>
+               <h4>1. Hierarchical database model </h4>
+               <p>In the hierarchical model, data is organized in a tree-like structure where each record has a single parent and possibly many children. This model is simple and fast for operations that follow a fixed path but is not flexible for complex relationships.
+
+</p>
+
+<h4>2. Network Database Model</h4>
+<p>The network model allows more complex relationships by organizing data in a graph structure. Records can have multiple parent and child records, making it more flexible than the hierarchical model but more difficult to design and manage.
+
+</p>
+<h4>3. Relational Database Model</h4>
+<p>The relational model stores data in tables (called relations) with rows and columns. It is the most widely used model today due to its simplicity, flexibility, and use of SQL for querying data. It supports easy data manipulation and avoids redundancy.
+
+</p>
+<h4>4. Object-Oriented Database Model</h4>
+<p>In this model, data is stored in the form of objects, similar to object-oriented programming. It supports complex data types and relationships, making it useful for applications that require multimedia or engineering data.
+
+</p>
+            </div>
+
+            <div class="question-box">
+                <h3>Integrity Constraints and types</h3><p>Integrity constraints are rules applied to database tables to maintain the accuracy and consistency of data. They ensure that the data entered into the database follows specific rules. The main types include:
+
+</p>
+<ol>
+    <li>Primary Key Constraint – Ensures that each record has a unique identifier.
+
+</li>
+    <li>Foreign Key Constraint – Maintains referential integrity between related tables.
+
+</li>
+    <li>Not Null Constraint – Ensures that a field cannot have a NULL (empty) value.
+
+</li>
+    <li>Unique Constraint – Ensures all values in a column are unique.
+
+</li>
+<li>
+    Check Constraint – Ensures that all values in a column meet a specific condition.
+
+</li>
+</ol>
+
+            </div>
+            <div class="question-box">
+                <h3>Normalization</h3>
+                <h4>a. Introduction</h4>
+                <p>Normalization is a process in database design used to organize data efficiently by removing redundancy and ensuring data integrity. It involves dividing large tables into smaller, related tables and defining relationships between them. The goal is to minimize duplication and improve consistency.
+
+                </p>
+                <h4>b. Normal Forms</h4>
+                <p>Normal forms are guidelines or rules used in the normalization process to organize database tables. Each normal form (1NF, 2NF, 3NF, etc.) addresses specific types of data anomalies and ensures higher levels of data integrity. As we move to higher normal forms, the structure becomes more refined and less redundant.
+
+                </p>
+
+                <h4>c. 1 NF, 2 NF, 3NF</h4>
+                <p>First Normal form(1 NF): A table is in 1NF if all the values in each column are atomic (indivisible) and there are no repeating groups. It ensures that each column contains only one value per row.
+
+                </p>
+                <p>Second Normal form(2NF): A table is in 2NF if it is in 1NF and all non-key attributes are fully functionally dependent on the entire primary key (no partial dependency). It applies mostly to tables with composite primary keys.
+
+
+
+                </p>
+                <p>Third Normal form(3 NF): A table is in 3NF if it is in 2NF and all non-key attributes are not transitively dependent on the primary key. This means non-key fields depend only on the key, not on other non-key fields.
+
+                 </p>
+                 <h4>d. Advantages:</h4>
+                 <ul>
+                    <li>Reduces data redundancy (no repeating data).
+
+                </li>
+                    <li>Ensures data integrity and consistency.
+
+                </li>
+                    <li>Makes updating data easier and more accurate.
+
+                </li>
+                    <li>Saves storage space by avoiding duplicate data.
+
+                </li>
+                    <li>Improves database organization and understanding.
+
+                </li>
+                 </ul>
+                 <h4>e. Disadvantages:</h4>
+                 <ul>
+                    <li>Increases the number of tables, making queries more complex.
+
+                </li>
+                    <li>Requires more joins, which can reduce performance.
+
+                </li>
+                    <li>Slower data retrieval in some cases.
+
+                </li>
+                    <li>Difficult to design and manage for beginners.
+
+                </li>
+                    <li>Not always suitable for reporting and analytics.
+
+                </li>
+                 </ul>
+            </div>
+            <div class="question-box">
+                <h3>Centralized and Distributed database</h3>
+                <h4>1. Centralized Database</h4>
+               
+                    <p>A centralized database is stored in a single central server or location, and all users access data through a network. It is easy to manage, maintain, and secure since everything is in one place. However, it creates a dependency on one system — if the central server fails, the entire database becomes unavailable, and access speed may be slower for remote users.</p>
+   
+                <h4>Advantages:</h4>
+                <ul>
+                    <li>Easy to manage and maintain.
+
+                </li>
+                    <li>Simple backup and recovery.
+
+                </li>
+                    <li>Strong data security in one location.
+
+                </li>
+                    <li>Consistent and accurate data.
+
+                </li>
+                    <li>Less hardware and software cost.
+
+                </li>
+                </ul>
+                <h4>Disadvantages:</h4>
+                <ul>
+                    <li>Single point of failure.
+
+</li>
+                    <li>Heavy load on one server.
+
+
+
+</li>
+                    <li>Slower access for remote users.
+
+
+
+</li>
+                    <li>Network dependency.
+
+</li>
+                    <li>Limited scalability.
+
+</li>
+
+                </ul>
+
+                <h4>2. Distributed Database</h4>
+                <p>A distributed database is spread across multiple servers or locations but functions as a single system for users. Each site stores part of the data and may process queries locally. This increases reliability, fault tolerance, and speed for local users. However, it is more complex to manage, requires synchronization, and can have higher maintenance costs.
+
+                </p>
+                <h4>Advantages:</h4>
+                <ul>
+                    <li>Faster access for local users.
+
+                    </li>
+                    <li>High reliability and availability.
+
+</li>
+                    <li>Continues working even if one site fails.
+
+</li>
+                    <li>Better scalability.
+
+</li>
+                    <li>Load is distributed across servers.
+
+</li>
+                </ul>
+                <h4>Disadvantages</h4>
+                <ul>
+                    <li>Complex system design and management.
+
+</li>
+                    <li>Expensive setup and maintenance.
+
+</li>
+                    <li>Difficult data synchronization.
+
+</li>
+                    <li>Security management is harder.
+
+</li>
+                    <li>Complex backup and recovery.
+
+</li>
+                </ul>
+                <h3>Comparison between Centralized and distributed databases:</h3>
+                <table style="width: 100%;">
+                    <tr>
+                        <th>Feature</th>
+                        <th>Centralized Database</th>
+                        <th>Distributed Database</th>
+                    </tr>
+                    <tr>
+                        <td>Location</td>
+                        <td>Data stored in a single location</td>
+                        <td>Data stored in multiple locations</td>
+                    </tr>
+                    <tr>
+                        <td>Reliability</td>
+                        <td>Less reliable(failure affects all users)</td>
+                        <td>More reliable(if one site fails the system continues)</td>
+
+                    </tr>
+                    <tr>
+                        <td>Access speed</td>
+                        <td>Low for remote users</td>
+                        <td>High for local users</td>
+                    </tr>
+                    <tr>
+                        <td>Management</td>
+                        <td>Easier to manage and control</td>
+                        <td>More complex to manage and control</td>
+
+                    </tr>
+                    <tr>
+                        <td>Scalability</td>
+                        <td>Difficult to scale</td>
+                        <td>Easily scalable</td>
+                    </tr>
+                    <tr>
+                        <td>Cost</td>
+                        <td>Low cost</td>
+                        <td>Higher setup and maintainance cost</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="question-box">
+                <h3>Database Security</h3>
+                <h4>Introduction</h4>
+                <p>Database security refers to the measures used to protect a database from unauthorized access, misuse, or theft. It ensures that only authorized users can access or modify data, keeping sensitive information safe. Security includes user authentication, access control, encryption, and regular backups to prevent data loss or breaches.</p>
+
+                <h4>Challenges</h4>
+                <p>Database security faces several challenges like unauthorized access, SQL injection attacks, and insider threats. Ensuring data privacy while allowing access to multiple users is complex. Managing strong authentication, encryption, and regular updates requires effort and expertise. Also, backup and disaster recovery need to be handled carefully to avoid data loss.
+
+</p>
+                <h4>Security measures</h4>
+                <p>To protect data from unauthorized access and misuse, several security measures are implemented in database systems. User authentication using usernames and passwords ensures only authorized users can log in. Access control assigns specific permissions to different users, restricting who can read, write, or delete data. Data encryption is used to protect sensitive information during storage and transmission. Firewalls and intrusion detection systems help monitor and block suspicious activities. Regular backups and update patches are also essential to recover from system failures or security breaches. Together, these measures help maintain data confidentiality, integrity, and availability.
+
+</p>
+               
+            </div>
+            <div class="question-box">
+                <h3>DBA and roles of DBA</h3>
+                <h4>Database Administrator (DBA)</h4>
+                <p>A Database Administrator (DBA) is a person responsible for the management, maintenance, and security of a database system. In today's world, data is considered one of the most valuable assets of an organization, and databases help store, organize, and manage this data efficiently.</p>
+                <h4>Roles of DBA</h4>
+                <ol>
+                    <li>
+                        <b>Database Installation and Configuration:</b> The DBA is responsible for installing and setting up the database software on servers and ensuring it works correctly.
+                    </li>
+                    <li>
+                        <b>Backup and Recovery:</b> DBAs regularly back up data and create recovery strategies to prevent data loss during failures or disasters.
+                    </li>
+                    <li>
+                        <b>Performance Tuning:</b> DBAs monitor database performance and make necessary adjustments to ensure fast and efficient data access.
+                    </li>
+                    <li><b>Security Management:</b> They control user access to the database, ensuring that only authorized users can access or modify data.
+
+                    </li>
+                    <li><b>Data Integrity and Maintenance:</b> The DBA ensures the consistency, accuracy, and reliability of data within the database.</li>
+                </ol>
+
+            </div>
+            <div class="question-box"> 
+                <h3>ER Diagrams</h3>
+                <p>An ER Diagram is a visual representation of entities and the relationships between them in a database. It is used during the database design process to understand how data is connected and structured. In an ER diagram, entities are objects or things (like students or books) that can be identified distinctly. Attributes describe properties of an entity (e.g., a student has a name, ID, and address).</p>
+
+                <h4>Symbols and their meanings</h4>
+                <ol>
+                    <li>Rectangles for entities</li>
+
+                    <li>Ellipses for attributes</li>
+
+                    <li>Diamonds for relationships</li>
+
+                    <li>Lines connecting entities to attributes and relationships</li>
+
+                    <li>Double ellipses for multivalued attributes</li>
+
+                    <li>Underlined attributes to represent primary keys</li>
+                </ol>
+            </div>
+            <div class="question-box">
+                <h3>SQl: DDl and DML</h3>
+                <p>SQL is a language used to communicate with databases. It is mainly divided into two categories: DDL (Data Definition Language) and DML (Data Manipulation Language).</p>
+
+                <h4>DDL includes commands like:</h4>
+                <ul>
+                    <li>CREATE (to create new tables or databases),</li>
+
+                    <li>ALTER (to modify existing structures),</li>
+
+                    <li>DROP (to delete tables or databases).</li>
+                </ul>
+
+                <h4>DML includes commands likeL:</h4>
+
+                <ul>
+                    <li>INSERT (to add new data),</li>
+
+                    <li>UPDATE (to modify existing data),</li>
+
+                    <li>DELETE (to remove data),</li>
+
+                    <li>SELECT (to retrieve data from one or more tables).</li>
+                </ul>
+
+
+            </div>
+
+            <div class="question-box">
+                <h3>Data constraints</h3>
+                <p>Data constraints are rules applied to columns in a table to ensure data accuracy and integrity. Some commonly used constraints are:</p>
+                <ul>
+                   <li>NOT NULL: Ensures that a column cannot have a NULL (empty) value.</li> 
+
+<li>UNIQUE: Ensures all values in a column are different.</li>
+
+<li>PRIMARY KEY: A combination of NOT NULL and UNIQUE. It uniquely identifies each record in a table.</li>
+
+<li>AUTO INCREMENT: Automatically increases the value of a numeric field (usually for primary keys) whenever a new record is inserted.</li>
+                </ul>
+
+            </div>
+            <div class="question-box">
+                <h3>Operators: AND, OR, NOT</h3>
+                <p>Operators in SQL are used to filter data based on specific conditions.</p>
+                <ul>
+                    <li>AND: Returns rows when all conditions are true (e.g., WHERE age > 18 AND gender = 'Male').</li>
+
+                    <li>OR: Returns rows when at least one condition is true (e.g., WHERE city = 'Kathmandu' OR city = 'Lalitpur').</li>
+
+                    <li>NOT: Reverses the result of a condition (e.g., WHERE NOT (status = 'Inactive')).</li>
+                </ul>
+            </div>
+            <div class="question-box">
+                <h3>WHERE clause</h3>
+                <p>The WHERE clause is used to filter records in a table based on a given condition. It helps retrieve specific data rather than the entire <pre>For example:
+
+                SELECT * FROM students WHERE grade > 60;</pre>
+
+
+                This command retrieves only those students who scored more than 60.</p>
+
+
+            </div>
+            
+            <div class="question-box">
+                <h3>ORDER BY clause</h3>
+                <p>The ORDER BY clause is used to sort the result set of a query in either ascending (ASC) or descending (DESC) order. <pre>For example:
+
+                SELECT * FROM students ORDER BY name ASC;</pre>
+
+
+This command displays all student records sorted by name in alphabetical order.</p>
+            </div>
+            <div class="question-box">
+                <h3>SQl Joins</h3>
+                <p>SQL JOINs are used to combine rows from two or more tables based on a related column.</p>
+
+<p><b>1. INNER JOIN:</b> Returns only the records that have matching values in both tables.
+
+<pre>
+    SELECT students.name, books.title
+    FROM students
+    INNER JOIN books ON students.id = books.student_id;</pre></p>
+
+
+<p><b>2. LEFT JOIN (or LEFT OUTER JOIN):</b> Returns all records from the left table and the matched records from the right table. Unmatched records from the right table will have NULL values.
+<pre>
+    SELECT students.name, books.title
+    FROM students
+    LEFT JOIN books ON students.id = books.student_id;</pre>
+</p>
+
+
+<p><b>3. RIGHT JOIN (or RIGHT OUTER JOIN):</b> Returns all records from the right table and the matched records from the left table. Unmatched records from the left table will have NULL values.
+<pre>
+    SELECT students.name, books.title
+    FROM students
+    RIGHT JOIN books ON students.id = books.student_id;</pre></p>
+
+
+
+
+<p><b>4. FULL JOIN (or FULL OUTER JOIN):</b> Returns all records when there is a match in either left or right table. If no match is found, NULL is returned for the missing side.
+<pre>
+    SELECT students.name, books.title
+    FROM students
+    FULL OUTER JOIN books ON students.id = books.student_id;</pre>
+    </p>
+
+
+
+            </div>
+
+    
+
+            
+        </section>
+    </div>
+</body>
+
+</html>
